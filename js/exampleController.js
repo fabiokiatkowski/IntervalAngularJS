@@ -11,14 +11,14 @@ app.controller('ExampleController', ['$scope', '$interval',
       if (angular.isDefined(delay)) $interval.cancel(delay);
 
       stop = $interval(function() {
-        $scope.blood_1 -= demage();
+        $scope.blood_1 -= damage();
         if ($scope.blood_1 <= 0) delayGame(3000);
-        $scope.blood_2 -= demage();
+        $scope.blood_2 -= damage();
         if ($scope.blood_2 <= 0) delayGame(4000)
       }, 100);
     };
 
-    function demage() {
+    function damage() {
       return Math.floor(Math.random() * 10) + 1;
     }
 
